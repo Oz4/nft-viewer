@@ -25,10 +25,14 @@ export default function Navbar() {
         <LRLogo width="130px" heigth="5rem" />
       </Box>
 
-      <Flex align="center"> 
-        <Link href="/collections">Collections</Link>
+      <Flex align="center">
+        <Link href="/collections">
+          <Text mr="2rem" cursor="pointer">
+            Collections
+          </Text>
+        </Link>
         {walletAddress ?
-          <Flex align="center" ml="2rem">
+          <Flex align="center">
             <Text mr="1rem" color="var(--lr-color-accent-green)">{getAddressShortcut(walletAddress)}</Text>
             <DisconnectWallet />
           </Flex>
