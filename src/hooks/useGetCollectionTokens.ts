@@ -183,7 +183,7 @@ export const requestCollectionTokens = async (cursor = { index: undefined }, col
       "collection": collection
     },
     "pagination": {
-      "first": 16,
+      "first": 25,
       "cursor": cursor.index || ""
     },
     "sort": "PRICE_ASC",
