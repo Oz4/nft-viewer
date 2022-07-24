@@ -4,6 +4,7 @@ import { ConnectWallet, DisconnectWallet } from "components/common"
 import { LRLogo } from "assets/logos"
 import { WalletProviderContext, WalletProviderInterface } from "setup/WalletProvider"
 import { getAddressShortcut } from "utils"
+import Link from "next/link"
 
 export default function Navbar() {
 
@@ -24,13 +25,16 @@ export default function Navbar() {
         <LRLogo width="130px" heigth="5rem" />
       </Box>
 
-      {walletAddress ?
-        <Flex align="center">
-          <Text mr="1rem" color="var(--lr-color-accent-green)">{getAddressShortcut(walletAddress)}</Text>
-          <DisconnectWallet />
-        </Flex>
-        :
-        <ConnectWallet />}
+      <Flex align="center"> 
+        <Link href="/collections">Collections</Link>
+        {walletAddress ?
+          <Flex align="center" ml="2rem">
+            <Text mr="1rem" color="var(--lr-color-accent-green)">{getAddressShortcut(walletAddress)}</Text>
+            <DisconnectWallet />
+          </Flex>
+          :
+          <ConnectWallet />}
+      </Flex>
 
     </Flex>
   )
