@@ -4,7 +4,7 @@
 
 Install and run the server:
 
-Run the server on **localhost:3000** to avoid getting blocked by cors policy
+Run the server on **localhost:3000** to avoid getting blocked by CORS policy
 
 ```bash
 npm install
