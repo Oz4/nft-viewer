@@ -17,6 +17,7 @@ const style = {
             ':root':{
                 "--lr-color-bg": "#121619",
                 "--lr-color-accent-100": "#21262A",
+                "--lr-color-accent-200": "#32373B",
                 "--lr-color-accent-green": "#2DE370",
                 "--lr-color-accent-blue": "#4589FF",
 
