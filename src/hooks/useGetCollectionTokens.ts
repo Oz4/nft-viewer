@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query"
+import { useInfiniteQuery } from "@tanstack/react-query"
 import { sendGraphRequest } from "utils"
 import { gql } from "graphql-request"
 
@@ -82,7 +82,7 @@ interface NFTTokensInterface {
 
 }
 
-export const requestCollectionTokens = async (collection: string) => {
+export const requestCollectionTokens = async (cursor = { index: undefined }, collection = "") => {
 
   const query = gql`
         
@@ -184,28 +184,29 @@ export const requestCollectionTokens = async (collection: string) => {
     },
     "pagination": {
       "first": 16,
-      "cursor": "148512560"
+      "cursor": cursor.index || ""
     },
     "sort": "PRICE_ASC",
-    "ownerFilter": {
-      "addresses": []
-    },
     "bidsFilter": {
-      "status": "VALID",
-      "startTime": 1658499554,
-      "endTime": 1658499554
+      "status": "VALID"
     }
   }
 
-  return (await sendGraphRequest(query, variables))
+  return (await sendGraphRequest(query, variables)).tokens as NFTTokensInterface[]
 
 
 
 }
 
 export const useGetCollectionTokens = (collection: string) => {
-  
-  const fetch = async (): Promise<NFTTokensInterface[]> => (await requestCollectionTokens(collection)).tokens
 
-  return useQuery(["get-nft", collection], fetch)
+  const fetch = ({ pageParam }: any) => requestCollectionTokens(pageParam, collection)
+
+  return useInfiniteQuery(["get-nft", collection], fetch, {
+    getNextPageParam: (lastPage) => {
+      if(lastPage.length >= 16) return {
+        index: lastPage[lastPage.length - 1].id
+      }
+    }
+  })
 }
