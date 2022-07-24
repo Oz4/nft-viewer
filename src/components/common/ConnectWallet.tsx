@@ -36,7 +36,19 @@ const ConnectWallet = () => {
 
 
     return (
-        <Button variant="lr-green" borderRadius="4rem" h="3rem" minW="90px" onClick={connectWallet}>
+        <Button
+            variant="lr-green"
+            borderRadius="4rem"
+            h={["2rem", "3rem"]}
+            minW="90px"
+            onClick={connectWallet}
+            fontSize={[
+                "var(--lr-font-size-10)",
+                "var(--lr-font-size-12)",
+                "var(--lr-font-size-14)",
+                "var(--lr-font-size-16)",
+            ]}
+        >
             Connect
         </Button>
     )

@@ -18,7 +18,19 @@ const DisconnectWallet = () => {
     }
 
     return (
-        <Button variant="lr-green-outline" borderRadius="4rem" h="3rem" minW="90px" onClick={disconnectWallet}>
+        <Button
+            variant="lr-green-outline"
+            borderRadius="4rem"
+            h={["2rem","3rem"]}
+            minW="90px"
+            fontSize={[
+                "var(--lr-font-size-10)",
+                "var(--lr-font-size-12)",
+                "var(--lr-font-size-14)",
+                "var(--lr-font-size-16)",
+            ]}
+            onClick={disconnectWallet}
+        >
             Disconnect
         </Button>
     )
