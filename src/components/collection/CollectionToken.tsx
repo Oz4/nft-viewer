@@ -28,14 +28,16 @@ const CollectionToken = ({
         bg: "var(--lr-color-accent-100)",
       }}
       transition="all 0.25s ease"
+      minH="280px"
     >
       <Link href={`/nft/${address}/${tokenId}`}>
         <Stack
           border="1px solid var(--lr-border-color-alpha-100)"
           borderRadius="0.5rem"
           padding="1rem"
+          h="100%"
         >
-          <Image src={image} alt={name || ""} />
+          <Image src={image} alt={name || ""} minH="148px" minW="148px" objectFit="contain"/>
           <Text fontSize="var(--lr-font-size-12)" color="var(--lr-font-color-200)">{name}</Text>
           <Flex fontSize="var(--lr-font-size-14)" align="center">{price ?
             <Flex align="center">
