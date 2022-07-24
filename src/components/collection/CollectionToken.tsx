@@ -1,12 +1,16 @@
 import React from "react"
-import { GridItem, Image, Stack, StackDivider, Text } from "@chakra-ui/react"
+import { Flex, GridItem, Image, Stack, StackDivider, Text } from "@chakra-ui/react"
 import Link from "next/link"
+import { convertWeiToEther } from "utils"
+import { EthLogo, WETHLogo } from "assets/logos"
 
 interface Props {
   image: string
   address: string
   tokenId: string
   name: string
+  price: string | undefined
+  offer: string | undefined
 }
 
 const CollectionToken = ({
@@ -14,6 +18,8 @@ const CollectionToken = ({
   address,
   tokenId,
   name,
+  price,
+  offer
 }: Props) => {
   return (
     <GridItem
@@ -29,11 +35,28 @@ const CollectionToken = ({
           borderRadius="0.5rem"
           padding="1rem"
         >
-          <Image src={image} alt={name || ""}/>
-          <Text>{name}</Text>
-          <Text>Price</Text>
+          <Image src={image} alt={name || ""} />
+          <Text fontSize="var(--lr-font-size-12)" color="var(--lr-font-color-200)">{name}</Text>
+          <Flex fontSize="var(--lr-font-size-14)" align="center">{price ?
+            <Flex align="center">
+              <EthLogo width="18px" heigth="18px" />
+              {convertWeiToEther(price)}
+            </Flex>
+            :
+            "Unlisted"}</Flex>
           <StackDivider borderBottom="1px solid var(--lr-border-color-alpha-100)" />
-          <Text>Price</Text>
+          <Flex align="center" color="var(--lr-font-color-100)" fontSize="var(--lr-font-size-12)">
+            Offer
+            {
+              offer ?
+                <Flex align="center">
+                  <WETHLogo width="16px" heigth="16px" />
+                  {convertWeiToEther(offer)}
+                </Flex>
+                :
+                "Not found"
+            }
+          </Flex>
         </Stack>
       </Link>
     </GridItem>

@@ -1,4 +1,4 @@
-import { Box, Grid } from "@chakra-ui/react"
+import { Box, Container, Grid } from "@chakra-ui/react"
 import type { NextPage } from "next"
 import { useGetCollectionTokens } from "hooks"
 import { useRouter } from "next/router"
@@ -12,6 +12,8 @@ const Collection: NextPage = () => {
   const { collection } = router.query
   const { data: tokens, isLoading } = useGetCollectionTokens(typeof collection === "string" ? collection : "")
 
+  console.log(tokens);
+
   if (isLoading) return <LoadingPage />
   return (
     <Box>
@@ -23,13 +25,23 @@ const Collection: NextPage = () => {
         collection={tokens?.[0].collection.name}
       />
       <Landing />
-      <Grid templateColumns="repeat(7, 1fr)" gap="1rem">
-        {tokens?.map((token) => {
-          return (
-            <CollectionToken key={token.tokenId} image={token.image.src} address={token.collection.address} tokenId={token.tokenId} name={token.name} />
-          )
-        })}
-      </Grid>
+      <Container maxW="1440px" mt="2rem">
+        <Grid templateColumns="repeat(auto-fit, minmax(180px, 1fr))" gap="1rem">
+          {tokens?.map((token) => {
+            return (
+              <CollectionToken
+                key={token.tokenId}
+                image={token.image.src}
+                address={token.collection.address}
+                tokenId={token.tokenId}
+                name={token.name}
+                price={token.ask?.price}
+                offer={token.bids?.[0]?.price}
+              />
+            )
+          })}
+        </Grid>
+      </Container>
     </Box>
   )
 }
