@@ -18,11 +18,13 @@ const Collections: NextPage = () => {
   if (isFetching && !isFetchingNextPage)
     return (
       <Box>
+
         <Meta
           title="Collections | Looksrare"
           description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
           url="/collections"
         />
+
         <Container maxW="1440px" p="2rem">
           <Header />
         </Container>
@@ -50,6 +52,7 @@ const Collections: NextPage = () => {
       <Box borderBottom="1px solid var(--lr-border-color-alpha-100)" />
 
       <Container maxW="1440px" p="2rem">
+
         <CollectionsList>
           {collections?.pages.flat().map((collection, index) => {
             return (
@@ -83,6 +86,7 @@ const Collections: NextPage = () => {
             Load More
           </Button>
         </Flex>
+        
       </Container>
 
     </Box>
