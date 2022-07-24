@@ -29,7 +29,7 @@ const CollectionToken = ({
           borderRadius="0.5rem"
           padding="1rem"
         >
-          <Image src={image} />
+          <Image src={image} alt={name || ""}/>
           <Text>{name}</Text>
           <Text>Price</Text>
           <StackDivider borderBottom="1px solid var(--lr-border-color-alpha-100)" />

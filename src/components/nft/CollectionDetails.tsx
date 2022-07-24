@@ -33,7 +33,7 @@ const CollectionDetails = ({
   return (
     <LRAccordion title="Collection Details" open={false} icon={TbBoxMultiple}>
       <Stack spacing="0">
-        {image && <Image src={image} w="50px" h="50px" borderRadius="0.25rem" mb="1rem" />}
+        {image && <Image src={image} alt={name || ""} w="50px" h="50px" borderRadius="0.25rem" mb="1rem" />}
 
         <Flex align="center">
           {name}

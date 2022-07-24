@@ -15,7 +15,7 @@ const ModalContent = () => {
         You earn rewards when you buy or sell any NFT on LooksRare!
       </Text>
       <Text mb="1rem" color="var(--lr-font-color-100)">
-        Rewards are distributed once daily in LooksRare's native token, LOOKS.
+        Rewards are distributed once daily in LooksRare&lsquo;s native token, LOOKS.
       </Text>
       <Text color="var(--lr-color-accent-green)" mb="1rem" fontWeight="bold">
         <Link target="_blank" rel="noopener noreferrer" href="https://docs.looksrare.org/about/rewards/trading-rewards">Learn More</Link>

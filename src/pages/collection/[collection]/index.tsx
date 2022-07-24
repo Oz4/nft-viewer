@@ -26,7 +26,7 @@ const Collection: NextPage = () => {
       <Grid templateColumns="repeat(7, 1fr)" gap="1rem">
         {tokens?.map((token) => {
           return (
-            <CollectionToken image={token.image.src} address={token.collection.address} tokenId={token.tokenId} name={token.name} />
+            <CollectionToken key={token.tokenId} image={token.image.src} address={token.collection.address} tokenId={token.tokenId} name={token.name} />
           )
         })}
       </Grid>

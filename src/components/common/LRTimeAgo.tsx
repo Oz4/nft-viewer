@@ -13,7 +13,9 @@ const TooltipRef = React.forwardRef(({ children, ...rest }: { children?: React.R
   </div>
 ))
 
-export default function LRTimeAgo({ timestamp }: { timestamp: number }) {
+TooltipRef.displayName = "TooltipRef"
+
+const LRTimeAgo = ({ timestamp }: { timestamp: number }) => {
   return (
     <Tooltip
       label={convertTimestampToDate(timestamp)}
@@ -31,3 +33,5 @@ export default function LRTimeAgo({ timestamp }: { timestamp: number }) {
     </Tooltip>
   )
 }
+
+export default LRTimeAgo

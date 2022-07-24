@@ -16,7 +16,6 @@ interface Props {
   description: string
   owner: string | null
   ownerAddress: string
-  ownerImage?: string
   contract: string
 }
 
@@ -28,7 +27,6 @@ const Details = ({
   description,
   owner,
   ownerAddress,
-  ownerImage,
   contract,
 }: Props) => {
 
@@ -88,11 +86,7 @@ const Details = ({
 
       <Flex h="50px" align="center" mb="1rem">
 
-        {ownerImage ? (
-          <img src={ownerImage} alt="" />
-        ) : (
-          <Blockies seed={ownerAddress} className="border-circle" />
-        )}
+        <Blockies seed={ownerAddress} className="border-circle" />
 
         <Flex direction="column" ml="0.5rem" mr="0.5rem" lineHeight="1.3">
           <Text

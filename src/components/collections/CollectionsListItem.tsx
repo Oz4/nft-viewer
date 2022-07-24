@@ -52,7 +52,7 @@ const CollectionsListItem = ({
       >
         <Flex align="center" w="35%">
           <Text minW="7%" maxW="12%" fontSize="var(--lr-font-size-16)">{index}</Text>
-          <Image src={src || ""} w="40px" h="40px" borderRadius="0.25rem" mr="0.5rem" />
+          <Image src={src || ""} alt={name || ""} w="40px" h="40px" borderRadius="0.25rem" mr="0.5rem" />
           <Text maxW="65%" className="elipsis">{name}</Text>
           {verified && <Icon as={MdVerified} color="var(--lr-color-accent-blue)" ml="0.5rem" />}
         </Flex>
