@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Icon, Link as ChakraLink, Text } from "@chakra-ui/react"
 import { useContext } from "react"
 import Blockies from "react-blockies"
 import { convertWeiToEther, getAddressShortcut } from "utils"
@@ -6,6 +6,7 @@ import { EthLogo } from "assets/logos"
 import { MdVerified } from "react-icons/md"
 import { TbMessageDots } from "react-icons/tb"
 import { WalletProviderContext, WalletProviderInterface } from 'setup/WalletProvider'
+import Link from "next/link"
 
 interface Props {
   collection: string
@@ -40,8 +41,12 @@ const Details = ({
       <Flex fontSize="var(--lr-font-size-14)" align="center" fontWeight="600">
 
         <Flex justify="space-between" w="100%">
-          <Link href={`/collection/${contract}`}>
-            {collection}
+
+          <Flex align="center">
+            <Link href={`/collection/${contract}`}>
+              {collection}
+            </Link>
+
             {verified && (
               <Icon
                 as={MdVerified}
@@ -49,7 +54,8 @@ const Details = ({
                 ml="0.25rem"
               />
             )}
-          </Link>
+          </Flex>
+
           {walletIsOwner && <Text className="green-text-animation">You own this item</Text>}
         </Flex>
 
@@ -118,7 +124,7 @@ const Details = ({
               bg: "var(--lr-color-accent-100)"
             }}
           >
-            <Link
+            <ChakraLink
               isExternal
               href={`https://chat.blockscan.com/index?a=${ownerAddress}`}
               textDecoration="unset"
@@ -129,7 +135,7 @@ const Details = ({
                 fontSize={"1.2rem"}
                 mt="0.3rem"
               />
-            </Link>
+            </ChakraLink>
           </Flex>
         }
       </Flex>
