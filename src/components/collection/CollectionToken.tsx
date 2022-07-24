@@ -11,6 +11,7 @@ interface Props {
   name: string
   price: string | undefined
   offer: string | undefined
+  onClick: any
 }
 
 const CollectionToken = ({
@@ -19,8 +20,10 @@ const CollectionToken = ({
   tokenId,
   name,
   price,
-  offer
+  offer,
+  ...props
 }: Props) => {
+
   return (
     <GridItem
       cursor="pointer"
@@ -29,6 +32,7 @@ const CollectionToken = ({
       }}
       transition="all 0.25s ease"
       minH="280px"
+      {...props}
     >
       <Link href={`/nft/${address}/${tokenId}`}>
         <Stack
@@ -37,16 +41,24 @@ const CollectionToken = ({
           padding="1rem"
           h="100%"
         >
-          <Image src={image} alt={name || ""} minH="148px" minW="148px" objectFit="contain"/>
+          
+          <Image src={
+            image.replace("https://static.looksnice.org/", "https://looksrare.mo.cloudinary.net/") + "?resource_type=image&f=auto&c=limit&w=280&q=auto:best"
+          } alt={name || ""} minH="148px" minW="148px" objectFit="contain" />
+
           <Text fontSize="var(--lr-font-size-12)" color="var(--lr-font-color-200)">{name}</Text>
+
           <Flex fontSize="var(--lr-font-size-14)" align="center">{price ?
             <Flex align="center">
               <EthLogo width="18px" heigth="18px" />
               {convertWeiToEther(price)}
             </Flex>
             :
-            "Unlisted"}</Flex>
+            "Unlisted"}
+          </Flex>
+
           <StackDivider borderBottom="1px solid var(--lr-border-color-alpha-100)" />
+
           <Flex align="center" color="var(--lr-font-color-100)" fontSize="var(--lr-font-size-12)">
             Offer
             {
@@ -59,6 +71,7 @@ const CollectionToken = ({
                 "Not found"
             }
           </Flex>
+
         </Stack>
       </Link>
     </GridItem>
