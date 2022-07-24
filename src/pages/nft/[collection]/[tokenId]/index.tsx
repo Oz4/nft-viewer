@@ -36,7 +36,9 @@ const NFT: NextPage = () => {
 
         <Flex direction={"column"} w="45%">
 
-          <Image src={nft?.image.src} alt={nft?.name || ""} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
+          <Image src={
+            nft?.image.src?.replace("https://static.looksnice.org/", "https://looksrare.mo.cloudinary.net/") + "?resource_type=image&f=auto&c=limit&w=480&q=auto:best"
+            } alt={nft?.name || ""} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
 
           {nft.attributes.length > 0 &&
             <Properties nftAttributes={nft.attributes} totalSupply={nft.collection.totalSupply} />}
