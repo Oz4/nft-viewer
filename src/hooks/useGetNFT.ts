@@ -134,8 +134,6 @@ export const requestNFT = async (collection: string, tokenId: string) => {
 
   return (await sendGraphRequest(query, variables))
 
-
-
 }
 
 export const useGetNFT = (collection: any, tokenId: any) => {
