@@ -49,15 +49,16 @@ const CollectionsListItem = ({
         _hover={{
           bg: "var(--lr-color-accent-100)",
         }}
+        wrap="wrap"
       >
-        <Flex align="center" w="35%">
-          <Text minW="7%" maxW="12%" fontSize="var(--lr-font-size-16)">{index}</Text>
+        <Flex align="center" w="34%" minW="200px">
+          <Text minW="30px" maxW="12%" fontSize="var(--lr-font-size-16)">{index}</Text>
           <Image src={src || ""} alt="" w="40px" h="40px" borderRadius="0.25rem" mr="0.5rem" />
           <Text maxW="65%" className="elipsis">{name}</Text>
           {verified && <Icon as={MdVerified} color="var(--lr-color-accent-blue)" ml="0.5rem" />}
         </Flex>
 
-        <Box w="15%">
+        <Box w="15%" minW="100px">
           <Flex direction="column" align="flex-start" justify="center" h="100%">
             <Flex align="center">
               {floor && <EthLogo width="1rem" heigth="1rem" />}
@@ -100,7 +101,7 @@ const CollectionsListItem = ({
           </Flex>
         </Text>
 
-        <Text w="5%">
+        <Text w="6%">
           <Flex h="100%" align="center">
             {items ? getNumberWithThreeDigitsComma(items) : "-"}
           </Flex>

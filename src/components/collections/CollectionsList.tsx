@@ -14,13 +14,14 @@ const CollectionsList = ({ children }: Props) => {
         fontWeight="400"
         pb="0.5rem"
         pr="2rem"
+        wrap="wrap"
       >
-        <Text w="35%">Collections</Text>
+        <Text w="34%">Collections</Text>
         <Text w="15%">Floor</Text>
         <Text w="15%">24h Vol</Text>
         <Text w="15%">Total Vol</Text>
         <Text w="15%">Owners</Text>
-        <Text w="5%">Items</Text>
+        <Text w="6%">Items</Text>
       </Flex>
       {children}
     </Box>
