@@ -52,7 +52,7 @@ const CollectionsListItem = ({
       >
         <Flex align="center" w="35%">
           <Text minW="7%" maxW="12%" fontSize="var(--lr-font-size-16)">{index}</Text>
-          <Image src={src || ""} alt={name || ""} w="40px" h="40px" borderRadius="0.25rem" mr="0.5rem" />
+          <Image src={src || ""} alt="" w="40px" h="40px" borderRadius="0.25rem" mr="0.5rem" />
           <Text maxW="65%" className="elipsis">{name}</Text>
           {verified && <Icon as={MdVerified} color="var(--lr-color-accent-blue)" ml="0.5rem" />}
         </Flex>
@@ -76,7 +76,7 @@ const CollectionsListItem = ({
           <Flex direction="column" align="flex-start" justify="center" h="100%">
             <Flex align="center">
               {dailyVol && <EthLogo width="1rem" heigth="1rem" />}
-              {dailyVol ? convertWeiToEther(dailyVol) : "-"}
+              {dailyVol ? getNumberWithThreeDigitsComma(convertWeiToEther(dailyVol)) : "-"}
             </Flex>
             {dailyVolChange !== null && dailyVolChange !== 0 && (
               <Text color={dailyVolChange > 0 ? "var(--lr-color-accent-green)" : "red.400"} fontSize="var(--lr-font-size-12)">
@@ -90,7 +90,7 @@ const CollectionsListItem = ({
         <Text w="15%">
           <Flex h="100%" align="center">
             {totalVol && <EthLogo width="1rem" heigth="1rem" />}
-            {totalVol ? convertWeiToEther(totalVol) : "-"}
+            {totalVol ? getNumberWithThreeDigitsComma(convertWeiToEther(totalVol)) : "-"}
           </Flex>
         </Text>
 
