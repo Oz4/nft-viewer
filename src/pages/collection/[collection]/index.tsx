@@ -4,15 +4,24 @@ import { useGetCollectionTokens } from "hooks"
 import { useRouter } from "next/router"
 import { Landing, CollectionToken } from "components/collection"
 import React from "react"
+import { LoadingPage, Meta } from "components/common"
 
 const Collection: NextPage = () => {
 
   const router = useRouter()
   const { collection } = router.query
-  const { data: tokens } = useGetCollectionTokens(typeof collection === "string" ? collection : "")
+  const { data: tokens, isLoading } = useGetCollectionTokens(typeof collection === "string" ? collection : "")
 
+  if (isLoading) return <LoadingPage />
   return (
     <Box>
+      <Meta
+        title={`${tokens?.[0].collection.name} | LooksRare`}
+        description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
+        url={`collection/${tokens?.[0].collection.address}`}
+        name={tokens?.[0].collection.name}
+        collection={tokens?.[0].collection.name}
+      />
       <Landing />
       <Grid templateColumns="repeat(7, 1fr)" gap="1rem">
         {tokens?.map((token) => {

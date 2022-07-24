@@ -3,7 +3,7 @@ import { Box, Button, Container, Flex } from "@chakra-ui/react"
 import { useGetCollectionsRanking } from "hooks"
 import React from "react"
 import { CollectionsList, CollectionsListItem, Header } from "components/collections"
-import { LoadingPage } from "components/common"
+import { LoadingPage, Meta } from "components/common"
 
 const Collections: NextPage = () => {
 
@@ -18,7 +18,11 @@ const Collections: NextPage = () => {
   if (isFetching && !isFetchingNextPage)
     return (
       <Box>
-
+        <Meta
+          title="Collections | Looksrare"
+          description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
+          url="/collections"
+        />
         <Container maxW="1440px" p="2rem">
           <Header />
         </Container>
@@ -32,6 +36,12 @@ const Collections: NextPage = () => {
 
   return (
     <Box>
+
+      <Meta
+        title="Collections | Looksrare"
+        description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
+        url="/collections"
+      />
 
       <Container maxW="1440px" p="2rem">
         <Header />
