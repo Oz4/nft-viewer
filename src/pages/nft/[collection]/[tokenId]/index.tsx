@@ -36,7 +36,7 @@ const NFT: NextPage = () => {
 
         <Flex direction={"column"} w="45%">
 
-          <Image src={nft?.image.src} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
+          <Image src={nft?.image.src} alt={nft?.name || ""} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
 
           {nft.attributes.length > 0 &&
             <Properties nftAttributes={nft.attributes} totalSupply={nft.collection.totalSupply} />}
@@ -92,7 +92,14 @@ const NFT: NextPage = () => {
 export default NFT
 
 
-export const getServerSideProps = async ({ params }: { params: { collection: string, tokenId: string } }) => {
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: true,
+  }
+}
+
+export const getStaticProps = async ({ params }: { params: { collection: string, tokenId: string } }) => {
 
   const { collection, tokenId } = params
   const queryClient = new QueryClient()
