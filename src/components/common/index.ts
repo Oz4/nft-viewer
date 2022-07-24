@@ -7,4 +7,5 @@ import LRTimeAgo from "./LRTimeAgo"
 import ConnectWallet from "./ConnectWallet"
 import DisconnectWallet from "./DisconnectWallet"
 import Meta from "./Meta"
-export { Navbar, LRAccordion, LRModal, LoadingPage, NotFoundPage, LRTimeAgo, ConnectWallet, DisconnectWallet, Meta }
+import LRInfiniteScroll from "./InfiniteScroll"
+export { Navbar, LRAccordion, LRModal, LoadingPage, NotFoundPage, LRTimeAgo, ConnectWallet, DisconnectWallet, Meta, LRInfiniteScroll }
