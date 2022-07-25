@@ -4,40 +4,46 @@ import { gql } from "graphql-request"
 
 interface NFTInterface {
   tokenId: string
-  name: string
-  description: string
+  name: string | null
+  description: string | null
   image: {
-    src: string
-  }
+    src: string | null
+    contentType: string | null
+  } | null
+  animation: {
+    src: string | null
+    contentType: string | null
+    original: string | null
+  } | null
   attributes: [{
-    traitType: string
-    value: string
-    count: string
+    traitType: string | null
+    value: string | null
+    count: string | null
     floorOrder: {
-      price: string
-    }
-  }]
+      price: string | null
+    }| null
+  }] | null
   owners: [{
     owner: {
-      address: string
+      address: string | null
       name: string | null
-    }
-  }]
+    } | null
+  }] | null
   collection: {
-    name: string
-    isVerified: boolean
-    description: string
+    name: string | null
+    isVerified: boolean 
+    description: string | null
     logo: {
-      src: string
-    }
-    countOwners: string
-    totalSupply: string
+      src: string | null
+    } | null
+    countOwners: string | null
+    totalSupply: string | null
     volume: {
-      volumeAll: string
-    }
+      volumeAll: string | null
+    } | null
     floor: {
-      floorPrice: string
-    }
+      floorPrice: string | null
+    } | null
   }
   events: [{
     hash: string
@@ -49,7 +55,7 @@ interface NFTInterface {
     to: {
       address: string
     }
-  }]
+  }] | null
   orders: [{
     hash: string
     startTime: string
@@ -57,7 +63,7 @@ interface NFTInterface {
     strategy: string
     signer: string
     price: string
-  }]
+  }] | null
 }
 
 export const requestNFT = async (collection: string, tokenId: string) => {
@@ -73,6 +79,12 @@ export const requestNFT = async (collection: string, tokenId: string) => {
           description
           image {
             src
+            contentType
+          }
+          animation {
+            src
+            contentType
+            original
           }
           owners{
             owner{
