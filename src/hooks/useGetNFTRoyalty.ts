@@ -18,11 +18,12 @@ export const requestNFTRoyalty = async (collection: string, tokenId: string): Pr
 }
 
 export const useGetNFTRoyalty = (collection: any, tokenId: any) => {
-
+    
     const [royalty, setRoyalty] = useState<RoyaltInterface>()
 
     useEffect(() => {
-        requestNFTRoyalty(collection, tokenId).then(result => setRoyalty(result))
+        if(collection && tokenId)
+            requestNFTRoyalty(collection, tokenId).then(result => setRoyalty(result))
     }, [])
 
     return royalty
