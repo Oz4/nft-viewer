@@ -10,7 +10,7 @@ interface Props {
   pageProps: AppProps["pageProps"]
 }
 
-export default function Providers({ children, pageProps }: Props) {
+const Providers = ({ children, pageProps }: Props) => {
   
   const reactQueryClient = useRef(new QueryClient())
 
@@ -30,3 +30,5 @@ export default function Providers({ children, pageProps }: Props) {
     </WalletProvider>
   )
 }
+
+export default Providers

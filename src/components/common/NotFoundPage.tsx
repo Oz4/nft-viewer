@@ -1,7 +1,7 @@
 import React from "react"
 import { Button, Container, Flex, Heading, Link, Text } from "@chakra-ui/react"
 
-export default function NotFoundPage() {
+const NotFoundPage = () => {
   return (
     <Container maxW="1440px" h="calc(100vh - 80px)">
       <Flex
@@ -36,3 +36,5 @@ export default function NotFoundPage() {
     </Container>
   )
 }
+
+export default NotFoundPage

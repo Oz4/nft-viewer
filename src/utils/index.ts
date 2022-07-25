@@ -1,4 +1,4 @@
-// every utils function is in a different file to make it easier to merge after a PR request 
+// every utils function is in a different file to make it easier to merge in conflicts
 import { getAddressShortcut } from "./getAddressShortcut";
 import { sendGraphRequest } from './sendGraphRequest'
 import { getEthersERC721ContractWithProvider } from './getEthersContractWithProvider'

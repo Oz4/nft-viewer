@@ -14,7 +14,7 @@ export interface WalletProviderInterface {
 
 export const WalletProviderContext = createContext<WalletProviderInterface | null>(null)
 
-export default function WalletProvider({ children, }: { children: React.ReactNode }) {
+const WalletProvider = ({ children, }: { children: React.ReactNode }) => {
 
   const [walletAddress, setWalletAddress] = useState<WalletProviderInterface["walletAddress"]>(undefined)
   const [signer, setSigner] = useState<WalletProviderInterface["signer"]>(undefined)
@@ -77,3 +77,5 @@ export default function WalletProvider({ children, }: { children: React.ReactNod
     </WalletProviderContext.Provider>
   )
 }
+
+export default WalletProvider

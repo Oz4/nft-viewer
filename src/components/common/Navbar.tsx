@@ -97,7 +97,7 @@ const BurgerNavbar = ({
   )
 }
 
-export default function Navbar() {
+const Navbar = () => {
 
   const { walletAddress } = useContext(WalletProviderContext) as WalletProviderInterface
 
@@ -113,8 +113,11 @@ export default function Navbar() {
       align="center"
       justify="space-between"
     >
-
-      <LRLogo />
+      <Link href={"/collections"} style={{ cursor: "pointer" }}>
+        <Text cursor="pointer">
+          <LRLogo />
+        </Text>
+      </Link>
 
       {
         windowSize.width && windowSize.width < 500 ?
@@ -127,3 +130,5 @@ export default function Navbar() {
     </Flex>
   )
 }
+
+export default Navbar

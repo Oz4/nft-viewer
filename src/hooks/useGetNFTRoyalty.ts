@@ -18,7 +18,7 @@ export const requestNFTRoyalty = async (collection: string, tokenId: string): Pr
 }
 
 
-export function useGetNFTRoyalty(collection: any, tokenId: any) {
+export const useGetNFTRoyalty = (collection: any, tokenId: any) => {
 
     const fetch = async (): Promise<RoyaltInterface> => await requestNFTRoyalty(collection, tokenId)
     return useQuery(["get-nft-royalty", `${collection}/${tokenId}`], fetch)
