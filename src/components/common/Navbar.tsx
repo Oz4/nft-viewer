@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Box, Flex, Stack, Text } from "@chakra-ui/react"
+import { Box, Flex, Stack, Text, useBreakpointValue } from "@chakra-ui/react"
 import { ConnectWallet, DisconnectWallet, LRDrawer } from "components/common"
 import { LRLogo } from "assets/logos"
 import { WalletProviderContext, WalletProviderInterface } from "setup/WalletProvider"
 import { getAddressShortcut } from "utils"
 import Link from "next/link"
+import { useWindowSize } from "hooks"
 
 const NormalNavbar = ({
   walletAddress
@@ -100,30 +101,7 @@ export default function Navbar() {
 
   const { walletAddress } = useContext(WalletProviderContext) as WalletProviderInterface
 
-  const [activateburgerNavbar, setActivateburgerNavbar] = useState(false)
-
-  useEffect(() => {
-
-    if (window.innerWidth < 480) {
-      setActivateburgerNavbar(true);
-    }
-
-    function handleResize() {
-      if (window.innerWidth < 480) {
-        setActivateburgerNavbar(true);
-      }
-      else if (window.innerWidth > 480) {
-        setActivateburgerNavbar(false);
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
+  const windowSize = useWindowSize()
 
   return (
     <Flex
@@ -139,12 +117,12 @@ export default function Navbar() {
       <LRLogo />
 
       {
-        activateburgerNavbar ?
+        windowSize.width && windowSize.width < 500 ?
+
           <BurgerNavbar walletAddress={walletAddress} />
           :
           <NormalNavbar walletAddress={walletAddress} />
       }
-
 
     </Flex>
   )
