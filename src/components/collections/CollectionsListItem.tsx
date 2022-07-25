@@ -91,24 +91,18 @@ const CollectionsListItem = ({
           </Flex>
         </Box>
 
-        <Text w="15%">
-          <Flex h="100%" align="center">
+        <Flex w="15%" align="center">
             {totalVol && <EthLogo width="1rem" heigth="1rem" />}
             {totalVol ? getNumberWithThreeDigitsComma(convertWeiToEther(totalVol)) : "-"}
-          </Flex>
-        </Text>
+        </Flex>
 
-        <Text w="15%">
-          <Flex h="100%" align="center">
+        <Flex w="15%" align="center">
             {owners ? getNumberWithThreeDigitsComma(owners) : "-"}
-          </Flex>
-        </Text>
+        </Flex>
 
-        <Text w="6%">
-          <Flex h="100%" align="center">
+        <Flex w="6%" align="center">
             {items ? getNumberWithThreeDigitsComma(items) : "-"}
-          </Flex>
-        </Text>
+        </Flex>
         
       </Flex>
   )
