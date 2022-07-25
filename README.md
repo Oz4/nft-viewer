@@ -26,6 +26,7 @@ npm run dev
     - Indication wether the connected wallet owns the nft
     - Offers (no support for pagination because I did not understant how the cursor 
     works) 
+    - Support for iframes, videos, and images
 
 4. Wallet provider
 
