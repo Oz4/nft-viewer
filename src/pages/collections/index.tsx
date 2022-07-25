@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 import { Box, Button, Container, Flex } from "@chakra-ui/react"
 import { useGetCollectionsRanking, useWindowSize } from "hooks"
 import React from "react"
-import { CollectionListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collections"
+import { CollectionsListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collections"
 import { LoadingPage, Meta } from "components/common"
 
 
@@ -57,28 +57,53 @@ const Collections: NextPage = () => {
       <Box borderBottom="1px solid var(--lr-border-color-alpha-100)" />
 
       <Container maxW="1440px" p="2rem">
+        {
+          windowSize.width && windowSize.width > 800 ?
 
-        <CollectionsList>
-          {collections?.pages.flat().map((collection, index) => {
-            return (
-              <CollectionsListItem
-                key={collection.address}
-                address={collection.address}
-                src={collection.logo.src}
-                name={collection.name}
-                verified={collection.isVerified}
-                floor={collection.floor.floorPrice}
-                dailyVol={collection.volume.volume24h}
-                totalVol={collection.volume.volumeAll}
-                owners={collection.countOwners}
-                items={collection.totalSupply}
-                floorChange={collection.floor.floorChange24h}
-                dailyVolChange={collection.volume.change24h}
-                index={index + 1}
-              />
-            )
-          })}
-        </CollectionsList>
+            <CollectionsList>
+              {collections?.pages.flat().map((collection, index) => {
+                return (
+                  <CollectionsListItem
+                    key={collection.address}
+                    address={collection.address}
+                    src={collection.logo.src}
+                    name={collection.name}
+                    verified={collection.isVerified}
+                    floor={collection.floor.floorPrice}
+                    dailyVol={collection.volume.volume24h}
+                    totalVol={collection.volume.volumeAll}
+                    owners={collection.countOwners}
+                    items={collection.totalSupply}
+                    floorChange={collection.floor.floorChange24h}
+                    dailyVolChange={collection.volume.change24h}
+                    index={index + 1}
+                  />
+                )
+              })}
+            </CollectionsList>
+
+            :
+            collections?.pages.flat().map((collection, index) => {
+              return (
+                <CollectionsListItemPhone
+                  key={collection.address}
+                  address={collection.address}
+                  src={collection.logo.src}
+                  name={collection.name}
+                  verified={collection.isVerified}
+                  floor={collection.floor.floorPrice}
+                  dailyVol={collection.volume.volume24h}
+                  totalVol={collection.volume.volumeAll}
+                  owners={collection.countOwners}
+                  items={collection.totalSupply}
+                  floorChange={collection.floor.floorChange24h}
+                  dailyVolChange={collection.volume.change24h}
+                  index={index + 1}
+                />
+              )
+            })
+        }
+
 
         <Flex align="center" justify="center" m="2rem">
           <Button
@@ -91,7 +116,7 @@ const Collections: NextPage = () => {
             Load More
           </Button>
         </Flex>
-        
+
       </Container>
 
     </Box>

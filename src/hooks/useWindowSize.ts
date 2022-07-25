@@ -25,6 +25,8 @@ export const useWindowSize = () => {
 
         if (!window) return
 
+        handleResize()// initial values
+
         window.addEventListener("resize", handleResize)
 
         return () => {
