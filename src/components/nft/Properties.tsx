@@ -9,12 +9,12 @@ interface Props {
   nftAttributes:
   | [
     {
-      traitType: string
-      value: string
-      count: string
+      traitType: string | null
+      value: string | null
+      count: string | null
       floorOrder: {
-        price: string
-      }
+        price: string | null
+      } | null
     }
   ]
   | undefined
@@ -34,7 +34,7 @@ const Property = ({
   traitType: string
   value: string
   count: string
-  floorPrice: string
+  floorPrice: string | null | undefined
   totalSupply: string
 }) => {
   return (
@@ -95,11 +95,11 @@ const Properties = ({ nftAttributes, totalSupply }: Props) => {
           return (
             <Property
               key={index}
-              traitType={attribute.traitType}
-              value={attribute.value}
-              count={attribute.count}
+              traitType={attribute.traitType || ""}
+              value={attribute.value || ""}
+              count={attribute.count || ""}
               floorPrice={attribute.floorOrder?.price}
-              totalSupply={totalSupply}
+              totalSupply={totalSupply || ""}
             />
           )
         })}

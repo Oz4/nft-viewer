@@ -16,6 +16,9 @@ const TooltipRef = React.forwardRef(({ children, ...rest }: { children?: React.R
 TooltipRef.displayName = "TooltipRef"
 
 const LRTimeAgo = ({ timestamp }: { timestamp: number }) => {
+
+  if(!timestamp) return <></>
+  
   return (
     <Tooltip
       label={convertTimestampToDate(timestamp)}

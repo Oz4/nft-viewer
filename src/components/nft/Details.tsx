@@ -13,8 +13,8 @@ interface Props {
   collection: string
   verified: boolean
   floor: string
-  name: string
-  description: string
+  name: string | null
+  description: string | null
   owner: string | null
   ownerAddress: string
   contract: string
