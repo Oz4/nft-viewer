@@ -21,7 +21,8 @@ const MediaLoader = ({
                 width: "500px",
                 height: "500px",
                 borderRadius: "0.5rem",
-                objectFit: "contain"
+                objectFit: "contain",
+                margin:"0 auto"
             }}
             controls
             role="video"
@@ -34,7 +35,8 @@ const MediaLoader = ({
                 width: "500px",
                 height: "500px",
                 borderRadius: "0.5rem",
-                objectFit: "contain"
+                objectFit: "contain",
+                margin:"0 auto"
             }}
             role="iframe"
         />
