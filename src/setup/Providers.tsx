@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import React, { useRef } from "react"
 import type { AppProps } from "next/app"
 import { ChakraProvider } from "@chakra-ui/react"
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query" // react-query is deprecated after v4 and migrated to @tanstack/react-query

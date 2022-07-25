@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app"
 import Providers from "setup/Providers"
+import React from "react"
 
 const LooksRareExchange = ({ Component, pageProps }: AppProps) => {
 
