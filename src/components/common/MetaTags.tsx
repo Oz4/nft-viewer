@@ -9,7 +9,7 @@ interface Props {
     collection?: string
     url?: string
 }
-const Meta = ({
+const MetaTags = ({
     title,
     description,
     image,
@@ -40,4 +40,4 @@ const Meta = ({
     )
 }
 
-export default Meta
+export default MetaTags

@@ -4,7 +4,7 @@ import { useGetCollectionTokens } from "hooks"
 import { useRouter } from "next/router"
 import { Landing, CollectionToken } from "components/collection"
 import React, { useState } from "react"
-import { LoadingPage, Meta, LRInfiniteScroll } from "components/common"
+import { LoadingPage, MetaTags, LRInfiniteScroll } from "components/common"
 
 const Collection: NextPage = () => {
 
@@ -19,7 +19,7 @@ const Collection: NextPage = () => {
   return (
     <Box position="relative">
 
-      <Meta
+      <MetaTags
         title={`${tokens?.[0].collection.name} | LooksRare`}
         description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
         url={`collection/${tokens?.[0].collection.address}`}

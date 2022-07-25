@@ -3,7 +3,7 @@ import { Box, Button, Container, Flex } from "@chakra-ui/react"
 import { useGetCollectionsRanking, useWindowSize } from "hooks"
 import React from "react"
 import { CollectionsListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collections"
-import { LoadingPage, Meta } from "components/common"
+import { LoadingPage, MetaTags } from "components/common"
 
 
 
@@ -24,7 +24,7 @@ const Collections: NextPage = () => {
     return (
       <Box>
 
-        <Meta
+        <MetaTags
           title="Collections | Looksrare"
           description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
           url="/collections"
@@ -44,7 +44,7 @@ const Collections: NextPage = () => {
   return (
     <Box>
 
-      <Meta
+      <MetaTags
         title="Collections | Looksrare"
         description="LooksRare is a next generation NFT market. Buy NFTs, sell NFTs… or just HODL: Collectors, traders, and creators alike earn passive income! 👀💎"
         url="/collections"

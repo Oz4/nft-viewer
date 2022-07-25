@@ -3,7 +3,7 @@ import type { NextPage } from "next"
 import { useRouter } from "next/router"
 import { requestNFT } from "hooks/useGetNFT"
 import { Container, Flex, Image } from "@chakra-ui/react"
-import { LoadingPage, NotFoundPage, Meta } from "components/common"
+import { LoadingPage, NotFoundPage, MetaTags } from "components/common"
 import { dehydrate, QueryClient } from "@tanstack/react-query"
 import { useGetNFT, useGetNFTBids, useGetNFTRoyalty } from "hooks"
 import { Properties, TokenDetails, CollectionDetails, Offers, Activity, TradeToEarnRewards, Details } from "components/nft"
@@ -23,7 +23,7 @@ const NFT: NextPage = () => {
   return (
     <Container maxW="1200px" p="2rem">
       {/* add meta tags */}
-      <Meta
+      <MetaTags
         title={`${nft?.name ? nft?.name : ""}${nft.collection.name ? (nft?.name ? " - " : "") + nft.collection.name + " | " : ""} LooksRare`}
         description={nft.description}
         image={nft?.image.src}
