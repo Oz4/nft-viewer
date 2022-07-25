@@ -4,7 +4,7 @@ import { convertWeiToEther, getNumberWithThreeDigitsComma } from "utils"
 import { MdVerified } from "react-icons/md"
 import { Icon } from "@chakra-ui/react"
 import { EthLogo } from "assets/logos"
-import Link from "next/link"
+import { useRouter } from 'next/router'
 
 interface Props {
   address: string | null
@@ -35,8 +35,10 @@ const CollectionsListItem = ({
   dailyVolChange,
   index,
 }: Props) => {
+
+  const router = useRouter()
+
   return (
-    <Link href={`/collection/${address}`}>
       <Flex
         justify="space-between"
         borderBottom="1px solid var(--lr-border-color-alpha-100)"
@@ -50,6 +52,7 @@ const CollectionsListItem = ({
           bg: "var(--lr-color-accent-100)",
         }}
         wrap="wrap"
+        onClick={() => router.push(`/collection/${address}`)}
       >
         <Flex align="center" w="34%" minW="200px">
           <Text minW="30px" maxW="12%" fontSize="var(--lr-font-size-16)">{index}</Text>
@@ -108,7 +111,6 @@ const CollectionsListItem = ({
         </Text>
         
       </Flex>
-    </Link>
   )
 }
 

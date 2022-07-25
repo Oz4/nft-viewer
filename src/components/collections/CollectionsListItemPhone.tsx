@@ -1,10 +1,9 @@
 import React, { useState } from "react"
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, Box, Flex, Image, Stack, Text } from "@chakra-ui/react"
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, Flex, Image, Stack, Text } from "@chakra-ui/react"
 import { convertWeiToEther, getNumberWithThreeDigitsComma } from "utils"
 import { MdVerified } from "react-icons/md"
 import { Icon } from "@chakra-ui/react"
 import { EthLogo } from "assets/logos"
-import Link from "next/link"
 import { useRouter } from 'next/router'
 
 
