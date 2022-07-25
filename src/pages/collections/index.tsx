@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import { Box, Button, Container, Flex } from "@chakra-ui/react"
-import { useGetCollectionsRanking } from "hooks"
+import { useGetCollectionsRanking, useWindowSize } from "hooks"
 import React from "react"
 import { CollectionListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collections"
 import { LoadingPage, Meta } from "components/common"
@@ -17,6 +17,8 @@ const Collections: NextPage = () => {
     isFetchingNextPage,
     isLoading
   } = useGetCollectionsRanking()
+
+  const windowSize = useWindowSize()
 
   if (isLoading)
     return (
@@ -56,10 +58,10 @@ const Collections: NextPage = () => {
 
       <Container maxW="1440px" p="2rem">
 
-        {/* <CollectionsList> */}
+        <CollectionsList>
           {collections?.pages.flat().map((collection, index) => {
             return (
-              <CollectionListItemPhone
+              <CollectionsListItem
                 key={collection.address}
                 address={collection.address}
                 src={collection.logo.src}
@@ -76,7 +78,7 @@ const Collections: NextPage = () => {
               />
             )
           })}
-        {/* </CollectionsList> */}
+        </CollectionsList>
 
         <Flex align="center" justify="center" m="2rem">
           <Button
