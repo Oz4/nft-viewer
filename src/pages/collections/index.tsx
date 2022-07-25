@@ -2,7 +2,7 @@ import React from "react"
 import type { NextPage } from "next"
 import { Box, Button, Container, Flex } from "@chakra-ui/react"
 import { useGetCollectionsRanking, useWindowSize } from "hooks"
-import { CollectionsListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collections"
+import { CollectionsListItemPhone, CollectionsList, CollectionsListItem, Header } from "components/collectionsRanking"
 import { LoadingPage, MetaTags } from "components/common"
 
 
