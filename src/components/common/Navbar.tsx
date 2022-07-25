@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Flex, Stack, Text } from "@chakra-ui/react"
+import { Box, Flex, Stack, Text } from "@chakra-ui/react"
 import { ConnectWallet, DisconnectWallet, LRDrawer } from "components/common"
 import { LRLogo } from "assets/logos"
 import { WalletProviderContext, WalletProviderInterface } from "setup/WalletProvider"
@@ -113,10 +113,10 @@ const Navbar = () => {
       align="center"
       justify="space-between"
     >
-      <Link href={"/collections"} style={{ cursor: "pointer" }}>
-        <Text cursor="pointer">
+      <Link href={"/collections"}>
+        <Box cursor="pointer">
           <LRLogo />
-        </Text>
+        </Box>
       </Link>
 
       {
