@@ -193,9 +193,7 @@ export const requestCollectionTokens = async (cursor = { index: undefined }, col
   }
 
   return (await sendGraphRequest(query, variables)).tokens as NFTTokensInterface[]
-
-
-
+  
 }
 
 export const useGetCollectionTokens = (collection: string) => {

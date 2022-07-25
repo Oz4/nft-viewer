@@ -9,6 +9,7 @@ interface Props {
 }
 
 const LRDrawer = ({ buttonTitle, drawerTitle, children }: Props) => {
+
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
@@ -33,6 +34,7 @@ const LRDrawer = ({ buttonTitle, drawerTitle, children }: Props) => {
             </Drawer>
         </>
     )
+    
 }
 
 export default LRDrawer

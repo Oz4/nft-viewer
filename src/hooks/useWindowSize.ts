@@ -13,12 +13,10 @@ export const useWindowSize = () => {
     })
 
     const handleResize = () => {
-
         setWindowSize({
             width: window.innerWidth,
             height: window.innerHeight
         })
-
     }
 
     useEffect(() => {
@@ -30,9 +28,7 @@ export const useWindowSize = () => {
         window.addEventListener("resize", handleResize)
 
         return () => {
-
             window.removeEventListener("resize", handleResize)
-
         }
 
     }, [])

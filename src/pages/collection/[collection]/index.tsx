@@ -30,6 +30,7 @@ const Collection: NextPage = () => {
       {tokenClicked && <Progress size='xs' isIndeterminate colorScheme="green" position="fixed" top={0} left={0} h="3px" w="100%" />}
 
       <Landing />
+
       <Container maxW="1440px" mt="2rem">
         <LRInfiniteScroll
           items={tokens}
@@ -52,6 +53,7 @@ const Collection: NextPage = () => {
           })}
         </LRInfiniteScroll>
       </Container>
+      
     </Box>
   )
 }

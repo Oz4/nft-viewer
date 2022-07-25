@@ -35,6 +35,7 @@ const LRTimeAgo = ({ timestamp }: { timestamp: number }) => {
 
     </Tooltip>
   )
+  
 }
 
 export default LRTimeAgo

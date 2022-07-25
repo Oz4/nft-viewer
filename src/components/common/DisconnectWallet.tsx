@@ -7,6 +7,7 @@ import { WalletProviderContext } from "setup/WalletProvider"
 const DisconnectWallet = () => {
 
     const context = useContext(WalletProviderContext)
+
     const [_, setIsForcedToDisconnect] = useLocalStorage("forceDisconnect", false)
 
     const disconnectWallet = () => {
@@ -22,7 +23,7 @@ const DisconnectWallet = () => {
         <Button
             variant="lr-green-outline"
             borderRadius="4rem"
-            h={["2rem","3rem"]}
+            h={["2rem", "3rem"]}
             minW="90px"
             fontSize={[
                 "var(--lr-font-size-10)",
@@ -35,6 +36,7 @@ const DisconnectWallet = () => {
             Disconnect
         </Button>
     )
+    
 }
 
 export default DisconnectWallet

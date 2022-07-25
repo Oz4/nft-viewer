@@ -24,13 +24,12 @@ const Offer = ({ offer, floor }: { offer: OfferInterface, floor: string }) => {
       fontSize="var(--lr-font-size-14)"
       color="var(--lr-font-color-100)"
     >
+
       <Flex align="center" mb="0.5rem">
         <WETHLogo width="20px" heigth="20px" />
-
         <Text fontSize="var(--lr-font-size-16)" color="var(--lr-font-color-main)" fontWeight="bold">
           {convertWeiToEther(offer.price)}
         </Text>
-
         <Text ml="0.5rem">
           {Math.abs(floorDifferencePercentage).toFixed(0)}%{" "}
           {floorDifferencePercentage < 0 ? "below" : "above"} floor
@@ -39,11 +38,9 @@ const Offer = ({ offer, floor }: { offer: OfferInterface, floor: string }) => {
 
       <Flex>
         <Text mr="0.4rem">By</Text>
-
         <Text color="var(--lr-font-color-200)" fontWeight="bold" mr="0.4rem">
           {getAddressShortcut(offer.signer)}
         </Text>
-
         <Flex>
           Expiry:
           <Box ml="0.4rem">
@@ -51,6 +48,7 @@ const Offer = ({ offer, floor }: { offer: OfferInterface, floor: string }) => {
           </Box>
         </Flex>
       </Flex>
+
     </Flex>
   )
 }
@@ -86,7 +84,6 @@ const Offers = ({ offers, floor }: Props) => {
             return <Offer offer={offer} key={index} floor={floor || "0"} />
           })
           : "No offers found"
-
       }
     </LRAccordion>
   )

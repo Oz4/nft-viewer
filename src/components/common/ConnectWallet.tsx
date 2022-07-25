@@ -5,17 +5,16 @@ import { ethers } from "ethers"
 import { useContext } from "react"
 import { WalletProviderContext } from "setup/WalletProvider"
 
-//? In production I would use web3-react
-//? that can handle multiple providers
-//? and has powerfull hooks but since its for demonstration
-//? Im using ethers to connect to metamask
+// In production I would use web3-react
+// that can handle multiple providers
+// and has powerfull hooks, but since its for demonstration
+// Im using ethers to connect to metamask
 
 const ConnectWallet = () => {
 
     const context = useContext(WalletProviderContext)
 
     const [_, setIsForcedToDisconnect] = useLocalStorage("forceDisconnect")
-
 
     const connectWallet = async () => {
 
@@ -34,8 +33,6 @@ const ConnectWallet = () => {
         }
     }
 
-
-
     return (
         <Button
             variant="lr-green"
@@ -53,6 +50,7 @@ const ConnectWallet = () => {
             Connect
         </Button>
     )
+
 }
 
 export default ConnectWallet

@@ -76,6 +76,7 @@ const CollectionToken = ({
       </Link>
     </GridItem>
   )
+  
 }
 
 export default CollectionToken

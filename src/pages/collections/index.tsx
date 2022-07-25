@@ -6,22 +6,15 @@ import { CollectionsListItemPhone, CollectionsList, CollectionsListItem, Header 
 import { LoadingPage, MetaTags } from "components/common"
 
 
-
-
 const Collections: NextPage = () => {
 
-  const {
-    data: collections,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    isLoading
-  } = useGetCollectionsRanking()
+  const { data: collections, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } = useGetCollectionsRanking()
 
   const windowSize = useWindowSize()
 
   if (isLoading)
     return (
+
       <Box>
 
         <MetaTags
@@ -37,9 +30,9 @@ const Collections: NextPage = () => {
         <Box borderBottom="1px solid var(--lr-border-color-alpha-100)" />
 
         <LoadingPage />
-
       </Box>
     )
+
 
   return (
     <Box>
@@ -57,16 +50,16 @@ const Collections: NextPage = () => {
       <Box borderBottom="1px solid var(--lr-border-color-alpha-100)" />
 
       <Container maxW="1440px" p="2rem">
+
         {
           windowSize.width && windowSize.width > 800 ?
-
             <CollectionsList>
               {collections?.pages.flat().map((collection, index) => {
                 return (
                   <CollectionsListItem
                     key={collection.address}
                     address={collection.address}
-                    src={collection.logo.src}
+                    src={collection.logo?.src}
                     name={collection.name}
                     verified={collection.isVerified}
                     floor={collection.floor.floorPrice}
@@ -83,12 +76,13 @@ const Collections: NextPage = () => {
             </CollectionsList>
 
             :
+
             collections?.pages.flat().map((collection, index) => {
               return (
                 <CollectionsListItemPhone
                   key={collection.address}
                   address={collection.address}
-                  src={collection.logo.src}
+                  src={collection.logo?.src}
                   name={collection.name}
                   verified={collection.isVerified}
                   floor={collection.floor.floorPrice}
@@ -102,8 +96,8 @@ const Collections: NextPage = () => {
                 />
               )
             })
-        }
 
+        }
 
         <Flex align="center" justify="center" m="2rem">
           <Button
@@ -118,7 +112,7 @@ const Collections: NextPage = () => {
         </Flex>
 
       </Container>
-
+      
     </Box>
   )
 }

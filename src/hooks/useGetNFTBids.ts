@@ -77,8 +77,6 @@ export const requestBids = async (collection: string, tokenId: string) => {
 
   return (await sendGraphRequest(query, variables))
 
-
-
 }
 
 export const useGetNFTBids = (collection: any, tokenId: any) => {

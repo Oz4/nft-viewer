@@ -18,6 +18,7 @@ interface LineFlexProps {
 }
 
 const TokenDetails = ({ tokenId, blockchain, tokenStandard, contract, creatorRoyalty }: Props) => {
+
   return (
     <LRAccordion title="Token Details" open={false} icon={BiInfoSquare}>
 
@@ -53,6 +54,7 @@ const TokenDetails = ({ tokenId, blockchain, tokenStandard, contract, creatorRoy
 
     </LRAccordion>
   )
+
 }
 
 const LineFlex = ({ children, title, mb = "1rem" }: LineFlexProps) => {

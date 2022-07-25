@@ -49,6 +49,7 @@ const NormalNavbar = ({
         <ConnectWallet />}
     </Flex>
   )
+
 }
 
 const BurgerNavbar = ({
@@ -95,6 +96,7 @@ const BurgerNavbar = ({
 
     </LRDrawer>
   )
+
 }
 
 const Navbar = () => {
@@ -113,6 +115,7 @@ const Navbar = () => {
       align="center"
       justify="space-between"
     >
+
       <Link href={"/collections"}>
         <Box cursor="pointer">
           <LRLogo />
@@ -121,7 +124,6 @@ const Navbar = () => {
 
       {
         windowSize.width && windowSize.width < 500 ?
-
           <BurgerNavbar walletAddress={walletAddress} />
           :
           <NormalNavbar walletAddress={walletAddress} />
@@ -129,6 +131,7 @@ const Navbar = () => {
 
     </Flex>
   )
+
 }
 
 export default Navbar

@@ -17,6 +17,7 @@ const MetaTags = ({
     collection,
     url
 }: Props) => {
+
     return (
         <Head>
             <meta name="twitter:card" content="summary_large_image"></meta>
@@ -38,6 +39,7 @@ const MetaTags = ({
             <meta property="og:image:alt" content={name || ""}></meta>
         </Head>
     )
+    
 }
 
 export default MetaTags

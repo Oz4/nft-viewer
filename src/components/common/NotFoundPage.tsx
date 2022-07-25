@@ -2,6 +2,7 @@ import React from "react"
 import { Button, Container, Flex, Heading, Link, Text } from "@chakra-ui/react"
 
 const NotFoundPage = () => {
+  
   return (
     <Container maxW="1440px" h="calc(100vh - 80px)">
       <Flex
@@ -35,6 +36,7 @@ const NotFoundPage = () => {
       </Flex>
     </Container>
   )
+
 }
 
 export default NotFoundPage

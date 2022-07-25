@@ -15,7 +15,6 @@ const LRInfiniteScroll = ({
     fetchNext,
     hasNextPage,
     children
-
 }: Props) => {
 
     return (
@@ -45,6 +44,7 @@ const LRInfiniteScroll = ({
             {children}
         </InfiniteScroll>
     )
+    
 }
 
 export default LRInfiniteScroll

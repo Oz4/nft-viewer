@@ -112,6 +112,7 @@ const CollectionsListItem = ({
         
       </Flex>
   )
+  
 }
 
 export default CollectionsListItem

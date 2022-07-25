@@ -12,8 +12,7 @@ const MediaLoader = ({
     contentType,
     original
 }: Props) => {
-
-
+    
     if (src && contentType?.includes("video"))
         return <video
             src={src}

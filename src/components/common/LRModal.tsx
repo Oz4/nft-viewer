@@ -9,6 +9,7 @@ interface Props {
 }
 
 const LRModal = ({ children, isOpen, setOpen, title }: Props) => {
+  
   return (
     <Modal isOpen={isOpen} onClose={() => setOpen(false)}>
 
@@ -22,6 +23,7 @@ const LRModal = ({ children, isOpen, setOpen, title }: Props) => {
 
     </Modal>
   )
+
 }
 
 export default LRModal

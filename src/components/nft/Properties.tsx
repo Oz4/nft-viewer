@@ -6,8 +6,7 @@ import { EthLogo } from "assets/logos"
 import { AiOutlineUnorderedList } from "react-icons/ai"
 
 interface Props {
-  nftAttributes:
-  | [
+  nftAttributes: [
     {
       traitType: string | null
       value: string | null
@@ -16,14 +15,10 @@ interface Props {
         price: string | null
       } | null
     }
-  ]
-  | undefined
+  ] | undefined
   totalSupply: string | null
 }
 
-/**
- * @description Property component in the properties accordion to display trait data
- */
 const Property = ({
   traitType,
   value,
@@ -37,6 +32,7 @@ const Property = ({
   floorPrice: string | null | undefined
   totalSupply: string
 }) => {
+
   return (
     <Box
       padding={"0.5rem"}
@@ -57,7 +53,6 @@ const Property = ({
           >
             {traitType}
           </Text>
-
           <Text className="trait-value" fontSize="var(--lr-font-size-12)">
             {value}
           </Text>
@@ -70,23 +65,22 @@ const Property = ({
           >
             {count} ({(parseFloat(count) / parseFloat(totalSupply) * 100).toFixed(2)}%)
           </Text>
-
           <Flex fontSize="var(--lr-font-size-11)" align="center">
             <EthLogo width="16px" heigth="16px" />
             {floorPrice ? convertWeiToEther(floorPrice) : "-"}
           </Flex>
         </Flex>
-        
+
       </Flex>
     </Box>
   )
+  
 }
 
 /**
  * @description displays properties in the NFT page
  */
 const Properties = ({ nftAttributes, totalSupply }: Props) => {
-
 
   return (
     <LRAccordion title="Properties" open={true} icon={AiOutlineUnorderedList}>
@@ -106,6 +100,7 @@ const Properties = ({ nftAttributes, totalSupply }: Props) => {
       </Flex>
     </LRAccordion>
   )
+
 }
 
 export default Properties

@@ -145,6 +145,7 @@ const CollectionListItemPhone = ({
             </Stack>
         </Flex>
     )
+    
 }
 
 export default CollectionListItemPhone

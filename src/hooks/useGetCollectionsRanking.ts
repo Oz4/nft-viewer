@@ -19,7 +19,6 @@ interface collectionStatistic {
 
 export const requestCollectionsRanking = async (cursor = { index: 0, collection: "" }) => {
 
-
   const query = gql`
     query GetCollectionsBase($filter: CollectionFilterInput, $pagination: PaginationInput, $sort: CollectionSortInput) {
         collections(filter: $filter, pagination: $pagination, sort: $sort) {
@@ -78,10 +77,9 @@ export const requestCollectionsRanking = async (cursor = { index: 0, collection:
 export const useGetCollectionsRanking = () => {
 
   const fetch = ({ pageParam }: any) => requestCollectionsRanking(pageParam)
-
+  
   return useInfiniteQuery(["collections"], fetch, {
     getNextPageParam: (lastPage, pages) => {
-
       if (lastPage.length >= 20)
         return {
           index: pages.length * 20,
