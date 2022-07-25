@@ -1,6 +1,6 @@
+import React from "react"
 import { Box, Flex, Link, Text } from "@chakra-ui/react"
 import { LRAccordion } from "components/common"
-import React from "react"
 import { BiInfoSquare } from "react-icons/bi"
 
 interface Props {

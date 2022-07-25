@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Box, Flex, Stack, Text, useBreakpointValue } from "@chakra-ui/react"
+import React, { useContext } from "react"
+import { Flex, Stack, Text } from "@chakra-ui/react"
 import { ConnectWallet, DisconnectWallet, LRDrawer } from "components/common"
 import { LRLogo } from "assets/logos"
 import { WalletProviderContext, WalletProviderInterface } from "setup/WalletProvider"

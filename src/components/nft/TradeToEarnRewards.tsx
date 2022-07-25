@@ -1,5 +1,5 @@
-import { Box, Flex, Image, Link, Text } from "@chakra-ui/react"
 import React, { useState } from "react"
+import { Box, Flex, Link, Text } from "@chakra-ui/react"
 import { LooksrareDesign } from "assets/logos"
 import { LRModal } from "components/common"
 

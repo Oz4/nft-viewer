@@ -1,3 +1,4 @@
+import React from "react"
 import { Box, Flex, Icon, Link as ChakraLink, Text } from "@chakra-ui/react"
 import { useContext } from "react"
 import Blockies from "react-blockies"

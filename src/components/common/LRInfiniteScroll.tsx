@@ -1,3 +1,4 @@
+import React from "react"
 import { Flex, Spinner } from "@chakra-ui/react"
 import InfiniteScroll from "react-infinite-scroll-component"
 

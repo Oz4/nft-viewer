@@ -1,5 +1,5 @@
-import { LRAccordion, LRTimeAgo } from "components/common"
 import React from "react"
+import { LRAccordion, LRTimeAgo } from "components/common"
 import { OfferInterface } from "hooks/useGetNFTBids"
 import { Box, Flex, Text } from "@chakra-ui/react"
 import { WETHLogo } from "assets/logos"

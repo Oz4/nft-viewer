@@ -1,9 +1,9 @@
+import React from "react"
 import { Flex, Image, Link, Stack, StackDivider, Text } from "@chakra-ui/react"
 import { LRAccordion } from "components/common"
 import { MdVerified } from "react-icons/md"
 import { Icon } from "@chakra-ui/react"
 import { abbreviateNumber, convertWeiToEther } from "utils"
-import React from "react"
 import { EthLogo } from "assets/logos"
 import { TbBoxMultiple } from "react-icons/tb"
 

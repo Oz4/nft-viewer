@@ -1,4 +1,5 @@
-import { Button, Text } from "@chakra-ui/react"
+import React from "react"
+import { Button } from "@chakra-ui/react"
 import { useLocalStorage } from "hooks"
 import { ethers } from "ethers"
 import { useContext } from "react"

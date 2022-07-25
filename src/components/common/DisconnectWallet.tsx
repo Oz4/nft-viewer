@@ -1,3 +1,4 @@
+import React from "react"
 import { Button } from "@chakra-ui/react"
 import { useLocalStorage } from "hooks"
 import { useContext } from "react"
