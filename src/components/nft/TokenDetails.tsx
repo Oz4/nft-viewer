@@ -8,7 +8,7 @@ interface Props {
   blockchain: string
   tokenStandard: string
   contract: string
-  creatorRoyalty: string
+  creatorRoyalty: string | undefined
 }
 
 interface LineFlexProps {
@@ -48,7 +48,7 @@ const TokenDetails = ({ tokenId, blockchain, tokenStandard, contract, creatorRoy
       </LineFlex>
 
       <LineFlex title="Creator Royalties" mb="0">
-        <Text>{(parseFloat(creatorRoyalty) / 100).toFixed(2)}%</Text>
+        <Text>{(parseFloat(creatorRoyalty || "0") / 100).toFixed(2)}%</Text>
       </LineFlex>
 
     </LRAccordion>

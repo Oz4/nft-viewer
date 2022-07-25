@@ -8,7 +8,7 @@ import { FaRegHandPaper } from "react-icons/fa"
 
 interface Props {
   offers: OfferInterface[] | undefined
-  floor: string
+  floor: string | null | undefined
 }
 
 const Offer = ({ offer, floor }: { offer: OfferInterface, floor: string }) => {
@@ -83,7 +83,7 @@ const Offers = ({ offers, floor }: Props) => {
       {
         offers?.length ?
           offers?.map((offer, index) => {
-            return <Offer offer={offer} key={index} floor={floor} />
+            return <Offer offer={offer} key={index} floor={floor || "0"} />
           })
           : "No offers found"
 

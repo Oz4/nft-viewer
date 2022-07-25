@@ -10,13 +10,13 @@ import { WalletProviderContext, WalletProviderInterface } from 'setup/WalletProv
 import Link from "next/link"
 
 interface Props {
-  collection: string
+  collection: string | null
   verified: boolean
-  floor: string
+  floor: string | null | undefined
   name: string | null
   description: string | null
-  owner: string | null
-  ownerAddress: string
+  owner: string | null | undefined
+  ownerAddress: string | null | undefined
   contract: string
 }
 
@@ -69,7 +69,7 @@ const Details = ({
         <Text ml="0.25rem">
           <EthLogo width="16px" heigth="16px" />
         </Text>
-        <Text>{convertWeiToEther(floor)}</Text>
+        <Text>{convertWeiToEther(floor || "0")}</Text>
       </Flex>
 
       <Box mb="1rem"></Box>
@@ -87,7 +87,7 @@ const Details = ({
 
       <Flex h="50px" align="center" mb="1rem">
 
-        <Blockies seed={ownerAddress} className="border-circle" />
+        <Blockies seed={ownerAddress || ""} className="border-circle" />
 
         <Flex direction="column" ml="0.5rem" mr="0.5rem" lineHeight="1.3">
           <Text
@@ -102,7 +102,7 @@ const Details = ({
             fontWeight="bold"
           >
             {
-              walletIsOwner ? "You" : (owner ? owner : getAddressShortcut(ownerAddress))
+              walletIsOwner ? "You" : (owner ? owner : getAddressShortcut(ownerAddress || ""))
             }
           </Text>
         </Flex>

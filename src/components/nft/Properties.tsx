@@ -18,7 +18,7 @@ interface Props {
     }
   ]
   | undefined
-  totalSupply: string
+  totalSupply: string | null
 }
 
 /**
@@ -97,9 +97,9 @@ const Properties = ({ nftAttributes, totalSupply }: Props) => {
               key={index}
               traitType={attribute.traitType || ""}
               value={attribute.value || ""}
-              count={attribute.count || ""}
+              count={attribute.count || "0"}
               floorPrice={attribute.floorOrder?.price}
-              totalSupply={totalSupply || ""}
+              totalSupply={totalSupply || "0"}
             />
           )
         })}

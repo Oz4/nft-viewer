@@ -12,9 +12,9 @@ interface Props {
   verified: boolean
   name: string | null
   contract: string
-  image: string | null
-  volume: string | null
-  floor: string | null
+  image: string | null | undefined
+  volume: string | null | undefined
+  floor: string | null | undefined
   totalSupply: string | null
   countOwners: string | null
 }

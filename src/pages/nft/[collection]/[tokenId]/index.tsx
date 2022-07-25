@@ -27,11 +27,11 @@ const NFT: NextPage = () => {
     <Container maxW="1200px" p="2rem">
 
       <MetaTags
-        title={`${nft?.name ? nft?.name : ""}${nft.collection.name ? (nft?.name ? " - " : "") + nft.collection.name + " | " : ""} LooksRare`}
+        title={`${nft.name ? nft.name : ""}${nft.collection.name ? (nft.name ? " - " : "") + nft.collection.name + " | " : ""} LooksRare`}
         description={nft.description || ""}
-        image={nft?.image?.src || ""}
-        name={nft?.name || ""}
-        collection={nft?.collection?.name || ""}
+        image={nft.image?.src || ""}
+        name={nft.name || ""}
+        collection={nft.collection?.name || ""}
         url={`${collection}/${tokenId}`}
       />
       
@@ -39,36 +39,35 @@ const NFT: NextPage = () => {
 
         <Flex direction={"column"} w={["100%", "100%", "45%"]}>
           <MediaLoader
-            src={nft?.animation?.src || nft?.image?.src || ""}
-            contentType={nft?.animation?.contentType || nft?.image?.contentType || ""}
+            src={nft.animation?.src || nft.image?.src}
+            contentType={nft.animation?.contentType || nft.image?.contentType}
             original={nft.animation?.original}
           />
 
           {
-            nft.attributes &&
-            nft.attributes.length > 0 &&
+            nft.attributes && nft.attributes.length > 0 &&
             <Properties
               nftAttributes={nft.attributes}
-              totalSupply={nft.collection.totalSupply || "0"}
+              totalSupply={nft.collection.totalSupply}
             />
           }
 
           <TokenDetails
-            tokenId={nft?.tokenId || ""}
+            tokenId={nft.tokenId}
             blockchain="Ethereum"
             tokenStandard="ERC721"
             contract={typeof collection === "string" ? collection : ""}
-            creatorRoyalty={royatly?.fee.toString() || "0"}
+            creatorRoyalty={royatly?.fee.toString()}
           />
 
           <CollectionDetails
             contract={typeof collection === "string" ? collection : ""}
-            description={nft.collection.description || ""}
-            verified={nft.collection.isVerified || false}
-            name={nft.collection.name || ""}
-            image={nft.collection.logo?.src || ""}
-            volume={nft.collection?.volume?.volumeAll || "0"}
-            floor={nft.collection?.floor?.floorPrice || "0"}
+            description={nft.collection.description}
+            verified={nft.collection.isVerified}
+            name={nft.collection.name}
+            image={nft.collection.logo?.src}
+            volume={nft.collection?.volume?.volumeAll}
+            floor={nft.collection?.floor?.floorPrice}
             totalSupply={nft.collection.totalSupply}
             countOwners={nft.collection.countOwners}
           />
@@ -76,19 +75,19 @@ const NFT: NextPage = () => {
 
         <Flex w={["100%", "100%", "55%"]} direction="column" pl={["0rem", "0rem", "2rem"]} pr={["0rem", "0rem", "2rem"]} pt={["2rem", "2rem", "0rem"]}>
           <Details
-            collection={nft.collection.name || ""}
-            verified={nft.collection.isVerified || false}
-            floor={nft.collection?.floor?.floorPrice || "0"}
-            name={nft?.name || ""}
-            description={nft.description || ""}
-            owner={nft?.owners?.[0]?.owner?.name || ""}
-            ownerAddress={nft?.owners?.[0]?.owner?.address || ""}
+            collection={nft.collection.name}
+            verified={nft.collection.isVerified}
+            floor={nft.collection?.floor?.floorPrice}
+            name={nft.name}
+            description={nft.description}
+            owner={nft.owners?.[0]?.owner?.name}
+            ownerAddress={nft.owners?.[0]?.owner?.address}
             contract={typeof collection === "string" ? collection : ""}
           />
 
           <Offers
             offers={nftBids}
-            floor={nft.collection.floor?.floorPrice || "0"}
+            floor={nft.collection.floor?.floorPrice}
           />
 
           <Activity />
