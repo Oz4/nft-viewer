@@ -1,7 +1,7 @@
-import { useQuery } from "@tanstack/react-query"
 import { BigNumber, ethers } from "ethers"
 import { ETH_RPC_ENDPOINT, ROYALTY_FEE_MANAGER_CONTRACT } from "data/constants"
 import RoyaltyFeeManagerABI from "data/RoyaltyFeeManagerABI.json"
+import { useEffect, useState } from "react"
 
 interface RoyaltInterface {
     receipt: string,
@@ -17,10 +17,14 @@ export const requestNFTRoyalty = async (collection: string, tokenId: string): Pr
 
 }
 
-
 export const useGetNFTRoyalty = (collection: any, tokenId: any) => {
 
-    const fetch = async (): Promise<RoyaltInterface> => await requestNFTRoyalty(collection, tokenId)
-    return useQuery(["get-nft-royalty", `${collection}/${tokenId}`], fetch)
+    const [royalty, setRoyalty] = useState<RoyaltInterface>()
+
+    useEffect(() => {
+        requestNFTRoyalty(collection, tokenId).then(result => setRoyalty(result))
+    }, [])
+
+    return royalty
 
 }
