@@ -22,7 +22,7 @@ const NFT: NextPage = () => {
 
   return (
     <Container maxW="1200px" p="2rem">
-      {/* add meta tags */}
+
       <MetaTags
         title={`${nft?.name ? nft?.name : ""}${nft.collection.name ? (nft?.name ? " - " : "") + nft.collection.name + " | " : ""} LooksRare`}
         description={nft.description}
@@ -32,13 +32,13 @@ const NFT: NextPage = () => {
         url={`${collection}/${tokenId}`}
       />
 
-      <Flex direction={"row"} justify="space-between">
+      <Flex direction={["column", "column", "row"]} justify="space-between">
 
-        <Flex direction={"column"} w="45%">
+        <Flex direction={"column"} w={["100%", "100%", "45%"]}>
 
           <Image src={
             nft?.image.src?.replace("https://static.looksnice.org/", "https://looksrare.mo.cloudinary.net/") + "?resource_type=image&f=auto&c=limit&w=480&q=auto:best"
-            } alt={nft?.name || ""} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
+          } alt={nft?.name || ""} w="500px" h="500px" borderRadius="0.5rem" objectFit="contain" margin="0 auto" />
 
           {nft.attributes.length > 0 &&
             <Properties nftAttributes={nft.attributes} totalSupply={nft.collection.totalSupply} />}
@@ -65,7 +65,7 @@ const NFT: NextPage = () => {
 
         </Flex>
 
-        <Flex w="55%" direction="column" pl="2rem" pr="2rem">
+        <Flex w={["100%", "100%", "55%"]} direction="column" pl={["0rem", "0rem", "2rem"]} pr={["0rem", "0rem", "2rem"]} pt={["2rem", "2rem", "0rem"]}>
 
           <Details
             collection={nft.collection.name || ""}

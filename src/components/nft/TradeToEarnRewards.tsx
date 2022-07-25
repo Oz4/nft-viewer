@@ -25,7 +25,7 @@ const ModalContent = () => {
 }
 
 const TradeToEarnRewards = () => {
-  const [open, setOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <Flex
@@ -38,17 +38,17 @@ const TradeToEarnRewards = () => {
       position="relative"
       overflow="hidden"
       onClick={() => {
-        setOpen((prev) => !prev)
+        setIsModalOpen((prev) => !prev)
       }}
       cursor="pointer"
       _hover={{ bg: "var(--lr-color-accent-100)" }}
       transition="all 0.25s ease"
     >
-      <LRModal isOpen={open} setOpen={setOpen} title="Earning Trading Rewards">
+      <LRModal isOpen={isModalOpen} setOpen={setIsModalOpen} title="Earning Trading Rewards">
         <ModalContent />
       </LRModal>
 
-      <Box>
+      <Box zIndex="1">
         <Text fontSize="var(--lr-font-size-14)" fontWeight="bold">
           Trade to Earn Rewards
         </Text>
@@ -59,7 +59,7 @@ const TradeToEarnRewards = () => {
         </Text>
       </Box>
 
-      <Box position="absolute" transform="tranlateY(-50%)" right="-96px">
+      <Box position="absolute" transform="tranlateY(-50%)" right="-96px" zIndex="0">
         <LooksrareDesign width="256px" heigth="256px" />
       </Box>
 
