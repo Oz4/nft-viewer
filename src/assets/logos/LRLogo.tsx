@@ -9,7 +9,7 @@ const LRLogo = ({ width, heigth }: Props) => {
 
   return (
     <Box w={[100, 130]} h={heigth ? heigth : "80px"}>
-      <svg viewBox="0 0 1093 148" fill="none" xmlns="http://www.w3.org/2000/svg" width="inherit" height="inherit">
+      <svg viewBox="0 0 1093 148" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
         <path
           d="M978.379 43.7306C1000.81 21.4231 1037.19 21.4231 1059.62 43.7306L1079 63L1059.62 82.2694C1037.19 104.577 1000.81 104.577 978.379 82.2694L959 63L978.379 43.7306Z"
           fill="black"
