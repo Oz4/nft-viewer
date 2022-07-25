@@ -1,3 +1,4 @@
+import React from 'react'
 import { Container, Flex } from '@chakra-ui/react'
 import { MetaTags } from 'components/common'
 import type { NextPage } from 'next'

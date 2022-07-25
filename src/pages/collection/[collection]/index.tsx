@@ -1,9 +1,9 @@
-import { Box, Container, Flex, Progress, Spinner } from "@chakra-ui/react"
+import React, { useState } from "react"
+import { Box, Container,Progress } from "@chakra-ui/react"
 import type { NextPage } from "next"
 import { useGetCollectionTokens } from "hooks"
 import { useRouter } from "next/router"
 import { Landing, CollectionToken } from "components/collection"
-import React, { useState } from "react"
 import { LoadingPage, MetaTags, LRInfiniteScroll } from "components/common"
 
 const Collection: NextPage = () => {
