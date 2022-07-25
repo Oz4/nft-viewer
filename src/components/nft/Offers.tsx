@@ -60,7 +60,7 @@ const Offers = ({ offers, floor }: Props) => {
     <LRAccordion
       title="Offers"
       open={false}
-      maxW="420px"
+      maxH="420px"
       icon={FaRegHandPaper}
       rightTitle={
         offers?.[0]?.price && (

@@ -6,12 +6,12 @@ interface Props {
   children?: React.ReactNode
   title: string
   open: boolean
-  maxW?: string
+  maxH?: string
   icon?: IconType
   rightTitle?: React.ReactNode
 }
 
-export default function LRAccordion({ children, title, open, maxW = "100%", icon = undefined, rightTitle = undefined }: Props) {
+export default function LRAccordion({ children, title, open, maxH = "100%", icon = undefined, rightTitle = undefined }: Props) {
   return (
     <Accordion defaultIndex={[open ? 0 : -1]} allowToggle maxW="100%" mt="0.75rem">
       <AccordionItem border="1px solid var(--lr-color-accent-100)" borderRadius="0.5rem">
@@ -30,7 +30,7 @@ export default function LRAccordion({ children, title, open, maxW = "100%", icon
           <AccordionIcon />
         </AccordionButton>
 
-        <AccordionPanel pb={6} pt={6} bg="var(--lr-color-bg)" borderRadius="0.5rem" maxH={maxW} overflow={maxW === "100%" ? undefined : "auto"}>
+        <AccordionPanel pb={6} pt={6} bg="var(--lr-color-bg)" borderRadius="0.5rem" maxH={maxH} overflow={maxH === "100%" ? undefined : "auto"}>
           {children}
         </AccordionPanel>
 
